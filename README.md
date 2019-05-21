@@ -15,4 +15,4 @@ So I can see the bookmarks,
 I would like the system to display a list of bookmarks.
 ```
 
-![Bookmark Challenge Domain Model](https://github.com/marbuthnott/bookmark_challenge/blob/master/bookmark_domain_model.jpg?raw=true)
+![Bookmark Challenge Domain Model](https://github.com/marbuthnott/bookmark_challenge/blob/master/domain_model_story1.jpg?raw=true)
