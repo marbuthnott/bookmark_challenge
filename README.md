@@ -28,7 +28,7 @@ I would like the system to display a list of bookmarks.
 2. Started PostgreSQL via `brew services start postgresql`.
 3. Create the database using the `psql` command `CREATE DATABASE bookmark_manager;`.
 4. Connect to the database using the `pqsl` command `\c bookmark_manager;`.
-5. Run the query we have saved in the file `01_create_bookmarks_table.sql`.
+5. Run the query we have saved in the file `db/migrations/01_create_bookmarks_table.sql`.
 
 ### To run the Bookmark Manager app
 
