@@ -30,6 +30,14 @@ I would like the system to display a list of bookmarks.
 4. Connect to the database using the `pqsl` command `\c bookmark_manager;`.
 5. Run the query we have saved in the file `db/migrations/01_create_bookmarks_table.sql`.
 
+### To set up the testing environment
+
+1. Created a `bookmarks_manager_test`. In psql run:
+```
+CREATE DATABASE "bookmark_manager_test";
+```
+2. Connect to the new database with `\c bookmarks_manager_test` and run the query we have saved in the file `db/migrations/01_create_bookmarks_table.sql`.
+
 ### To run the Bookmark Manager app
 
 1. Run `rackup -p 3000` from the command line.

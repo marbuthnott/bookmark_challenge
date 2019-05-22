@@ -3,6 +3,7 @@ require_relative 'models/bookmarks'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
+    p ENV
     'Bookmark Manager'
   end
 
