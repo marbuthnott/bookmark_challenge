@@ -1,5 +1,6 @@
 # at the top of spec/spec_helper.rb
 require_relative './setup_test_database'
+require_relative './database_helpers'
 
 ENV['ENVIRONMENT'] = 'test'
 RSpec.configure do |config|

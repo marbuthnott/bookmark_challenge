@@ -3,7 +3,7 @@ require_relative 'models/bookmarks'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
-    'Bookmark Manager'
+    erb :welcome_page
   end
 
   get '/bookmarks' do
@@ -16,7 +16,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    Bookmarks.create(url: params['url'])
+    Bookmarks.create(url: params['url'], title: params['title'])
     redirect '/bookmarks'
   end
 

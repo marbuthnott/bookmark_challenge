@@ -8,8 +8,8 @@ feature "Add bookmarks" do
     #conn = PG.connect(dbname: 'bookmark_manager_test')
     visit '/bookmarks/new'
     fill_in 'url', with: "http://www.cnn.com"
+    fill_in 'title', with: "CNN"
     click_button 'Submit'
-    expect(page).to have_content("http://www.cnn.com")
+    expect(page).to have_link("CNN", href: 'http://www.cnn.com')
   end
 end
-
