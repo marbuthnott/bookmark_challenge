@@ -21,6 +21,10 @@ I would like to add new bookmarks to my list.
 As a user,
 So I can remove a bookmark,
 I would like the system to delete a specific row from the bookmarks table.
+
+As a user,
+So I can update a bookmark,
+I would like the system to modify a bookmark.
 ```
 
 ### User Story 1

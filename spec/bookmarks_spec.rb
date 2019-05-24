@@ -31,4 +31,26 @@ describe Bookmarks do
     end
   end
 
+  describe '.delete' do
+    it 'deletes the given bookmark' do
+      bookmark = Bookmarks.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+  
+      Bookmarks.delete(id: bookmark.id)
+  
+      expect(Bookmarks.all.length).to eq 0
+    end
+  end 
+
+  describe '.update' do
+    it 'updates the given bookmark' do
+      bookmark = Bookmarks.create(title: 'Hoogle', url: 'http://www.hoogle.com')
+  
+      updated_bookmark = Bookmarks.update(id: bookmark.id, title: 'Google', url: 'http://www.google.com')
+  
+      expect(updated_bookmark).to be_a Bookmarks
+      expect(updated_bookmark.id).to eq bookmark.id
+      expect(updated_bookmark.title).to eq 'Google'
+      expect(updated_bookmark.url).to eq 'http://www.google.com'
+    end
+  end 
 end
