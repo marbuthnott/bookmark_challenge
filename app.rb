@@ -3,7 +3,7 @@ require_relative 'models/bookmarks'
 
 class BookmarkManager < Sinatra::Base
 
-  enable :sessions, :method_override
+  enable :method_override
 
   get '/' do
     erb :welcome_page
@@ -29,12 +29,12 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks/:id/update' do
-    @bookmark_id = params[:id]
+    @bookmark = Bookmarks.find(id: params[:id])
     erb :'bookmarks/update'
   end
 
   patch '/bookmarks/:id' do
-    Bookmarks.update(id: params['id'], title: params['title'], url: params['url'])
+    Bookmarks.update(id: params[:id], title: params[:title], url: params[:url])
     redirect '/bookmarks'
   end
 

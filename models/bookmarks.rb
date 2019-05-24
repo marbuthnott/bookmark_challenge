@@ -29,7 +29,6 @@ class Bookmarks
       conn = PG.connect(dbname: 'bookmark_manager')
     end
   
- 
     result = conn.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, url, title")
     Bookmarks.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
@@ -53,7 +52,16 @@ class Bookmarks
 
     result = conn.exec("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = #{id} RETURNING id, url, title;")
     Bookmarks.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
+  end
 
+  def self.find(id:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    result = connection.exec("SELECT * FROM bookmarks WHERE id = #{id};")
+    Bookmarks.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 
 end

@@ -53,4 +53,17 @@ describe Bookmarks do
       expect(updated_bookmark.url).to eq 'http://www.google.com'
     end
   end 
+
+  describe '.find' do
+    it 'returns the requested bookmark object' do
+      bookmark = Bookmarks.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+
+      result = Bookmarks.find(id: bookmark.id)
+
+      expect(result).to be_a Bookmarks
+      expect(result.id).to eq bookmark.id
+      expect(result.title).to eq 'Makers Academy'
+      expect(result.url).to eq 'http://www.makersacademy.com'
+    end
+  end
 end
