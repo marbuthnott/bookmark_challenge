@@ -9,6 +9,19 @@ This is the week 4 weekly challenge of the Makers Academy software engineering b
 You're going to build a bookmark manager. A bookmark manager is a website to maintain a collection of bookmarks (URLs). You can use it to save a webpage you found useful. You can add tags to the webpages you saved to find them later. You can browse bookmarks other users have added. You can comment on the bookmarks.
 
 ## User Stories
+```
+As a User,
+So I can see the bookmarks,
+I would like the system to display a list of bookmarks.
+
+As a user,
+So I can manage my bookmarks
+I would like to add new bookmarks to my list.
+
+As a user,
+So I can remove a bookmark,
+I would like the system to delete a specific row from the bookmarks table.
+```
 
 ### User Story 1
 ```
